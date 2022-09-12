@@ -1,0 +1,2 @@
+C:\Users\ninja\source\repos\game\x64\Debug\game.exe
+C:\Users\ninja\RedVelvet-Demo\x64\Debug\game.exe

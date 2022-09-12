@@ -1,0 +1,4 @@
+﻿  Kod üretiliyor
+  Previous IPDB not found, fall back to full compilation.
+C:\Users\ninja\source\repos\game\Animator.cpp(56): warning C4715: 'Animator::changeFrame': tüm denetim yolları değer döndürmez
+MSBUILD : error MSB4166: "2" alt düğümü beklenenden önce çıktı. Kapatılıyor. Tanılama bilgileri, "C:\Users\ninja\AppData\Local\Temp\" konumunda bulunabilir ve MSBuild_*.failure.txt olarak adlandırılır. Bu konum, MSBUILDDEBUGPATH ortam değişkeni farklı bir dizine ayarlanarak değiştirilebilir.
