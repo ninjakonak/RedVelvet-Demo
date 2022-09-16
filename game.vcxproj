@@ -147,17 +147,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Block.cpp" />
     <ClCompile Include="jsoncpp.cpp" />
     <ClCompile Include="src\Animator.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Level.cpp" />
     <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\ShaderClass.cpp" />
     <ClCompile Include="src\Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Block.h" />
     <ClInclude Include="include\Animator.h" />
+    <ClInclude Include="include\constants.h" />
     <ClInclude Include="include\Game.h" />
+    <ClInclude Include="include\Level.h" />
     <ClInclude Include="include\Player.h" />
     <ClInclude Include="include\ShaderClass.h" />
     <ClInclude Include="include\Timer.h" />

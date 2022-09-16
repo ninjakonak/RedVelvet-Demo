@@ -1,6 +1,6 @@
 #pragma once
-#ifndef PLAYER2_H
-#define PLAYER2_H
+#ifndef PLAYER_H
+#define PLAYER_H
 #include<iostream>
 #include<vector>
 #include<format>
@@ -8,7 +8,7 @@
 #include<string>
 #include"Animator.h"
 #include"ShaderClass.h"
-
+#include"Block.h"
 
 #include<SFML/Graphics.hpp>
 #include<SFML/System.hpp>
@@ -16,8 +16,9 @@
 #include<SFML/Network.hpp>
 #include<SFML/Window.hpp>
 #include<fstream>
-#include<json/json.h>
+
 #include"Timer.h"
+#include"../include/constants.h"
 
 
 
@@ -29,17 +30,16 @@ public:
 	Player();
 	virtual ~Player();
 
-	void SetMap(std::vector<sf::Sprite> hitboxSprites, const sf::Texture* spikeTxt, int mapIndexX, int mapIndexY, int mapIncX, int mapIncY);
+	void SetMap(std::vector<Block> hitboxSprites, const sf::Texture* spikeTxt, int* mapIndexX, int* mapIndexY, int* mapIncX, int* mapIncY);
 	void SetBeginningCoordinates(float x, float y);
 	void SetExits(std::vector<sf::Vector2f> leftExits, std::vector<sf::Vector2f> rightExits, std::vector<sf::Vector2f> upExits, std::vector<sf::Vector2f> downExits);
 	void InitVariables();
 	void SetWindow(sf::RenderWindow* window);
 
-	sf::Vector2i getMapIndexes();
-	sf::Vector2i getMapIncrements();
 
-	int width = 36;
-	int height = 48;
+
+	int width;
+	int height;
 
 	sf::Vector2f offsetPos;
 
@@ -76,13 +76,13 @@ private:
 	int screen_height = 960;
 	int screen_width = 960;
 
-	int mapIndexX;
-	int mapIndexY;
+	int* mapIndexX;
+	int* mapIndexY;
 
-	int mapIncX;
-	int mapIncY;
+	int* mapIncX;
+	int* mapIncY;
 
-	std::vector<sf::Sprite> hitboxSprites;
+	std::vector<Block> hitboxSprites;
 	const sf::Texture* spikeTxt;
 
 	std::vector<sf::Vector2f> leftExits;
@@ -101,6 +101,8 @@ private:
 	
 	bool canSlide;
 	bool sliding;
+	float slideDeceleration;
+
 	void DisableSliding();
 	void EnableSliding();
 	void CheckSliding();
@@ -260,13 +262,9 @@ private:
 	Animator fallAnimation = Animator(this->framesFallRight, this->framesFallLeft, false, (float)0.1);
 	Animator jumpAnimation = Animator(this->framesJumpRight, this->framesJumpLeft, false, (float)0.1);
 
-	void ParseJSON();
+	
 	void MoveCamera();
 	
-	std::ifstream dataFile;
-	Json::Value jsonData;
-	Json::Reader jsonReader;
-
 
 
 	

@@ -1,8 +1,9 @@
 #include "../include/Player.h"
 
 
-void Player::SetMap(std::vector<sf::Sprite> hitboxSprites, const sf::Texture* spikeTxt, int mapIndexX, int mapIndexY, int mapIncX, int mapIncY) {
+void Player::SetMap(std::vector<Block> hitboxSprites, const sf::Texture* spikeTxt, int* mapIndexX, int* mapIndexY, int* mapIncX, int* mapIncY) {
 	this->hitboxSprites = hitboxSprites;
+	
 	this->spikeTxt = spikeTxt;
 	
 	
@@ -10,6 +11,7 @@ void Player::SetMap(std::vector<sf::Sprite> hitboxSprites, const sf::Texture* sp
 	this->mapIndexY = mapIndexY;
 	this->mapIncX = mapIncX;
 	this->mapIncY = mapIncY;
+
 }
 
 void Player::SetBeginningCoordinates(float x, float y) {
@@ -30,14 +32,6 @@ void Player::SetWindow(sf::RenderWindow* window) {
 	this->window = window;
 }
 
-sf::Vector2i Player::getMapIndexes() {
-	return sf::Vector2i(this->mapIndexX, this->mapIndexY);
-}
-
-sf::Vector2i Player::getMapIncrements() {
-	return sf::Vector2i(this->mapIncX, this->mapIncY);
-}
-
 Player::Player() {
 	this->InitVariables();
 	this->InitPlayerTexture();
@@ -49,19 +43,27 @@ Player::~Player(){
 }
 
 void Player::InitVariables() {
-	this->ParseJSON();
-	this->moveSpeed = 4;
-	this->jumpSpeed = 14;
+	this->width = PLAYER_WIDTH;
+	this->height = PLAYER_HEIGHT;
+
+	this->moveSpeed = MOVE_SPEED;
+	this->jumpSpeed = JUMP_SPEED;
+	this->slideDeceleration = SLIDE_DECELERATION;
+
 	this->goingLeft = false;
 	this->goingRight = false;
 	this->canJump = false;
-	this->GravitationalForce = 0.5f;
+
+	this->GravitationalForce = GRAVITATIONAL_FORCE;
 	this->spaceBarPressed = false;
+
 	this->cameraFrame.x = 0;
 	this->cameraFrame.y = 0;
 	this->cameraReturnSpeed = 0;
-	this->accelerationSpeed = 1;
-	this->stopSpeed = 0.5f;
+
+	this->accelerationSpeed = ACCELERATION_SPEED;
+	this->stopSpeed = STOP_SPEED;
+
 	this->canSlide = true;
 	this->sliding = false;
 	this->movementLocked = false;
@@ -116,15 +118,15 @@ void Player::CheckSliding() {
 				this->vectorX = 0;
 			}
 			if (this->vectorX != 0) {
-				//this->vectorX > 0 ? this->vectorX -= 0.1f : this->vectorX += 0.1f;
+
 				if (this->direction == 1) {
-					this->vectorX -= 0.02f;
+					this->vectorX -= slideDeceleration;
 					if (this->vectorX <= 0) {
 						this->vectorX = 0;
 					}
 				}
 				else {
-					this->vectorX += 0.02f;
+					this->vectorX += this->slideDeceleration;
 					if (this->vectorX >= 0) {
 						this->vectorX = 0;
 					}
@@ -290,7 +292,6 @@ bool Player::Collide(float x1, float x2, float y1, float y2, int width1, int wid
 
 void Player::Horizontal_Collisions() {
 	for (auto& tile : this->hitboxSprites) {
-		
 		if (this->Collide(this->playerCoordinates.x, tile.getPosition().x, this->playerCoordinates.y, tile.getPosition().y, this->width, this->tileSize, this->height, this->tileSize)) {
 
 			if (this->vectorX > 0) {
@@ -440,11 +441,10 @@ void Player::UpdateCamera() {
 }
 
 bool Player::CheckExits() {
-
 	for (auto& exit : this->leftExits) {
 		if (this->Collide(this->playerCoordinates.x, exit.x, this->playerCoordinates.y, exit.y, this->width, this->tileSize, this->height, this->tileSize)) {
-			this->mapIncX = -1;
-			this->mapIndexX += this->mapIncX;
+			*this->mapIncX = -1;
+			*this->mapIndexX += *this->mapIncX;
 			this->playerCoordinates = this->playerBeginningCoordinates;
 			return true;
 		}
@@ -452,8 +452,8 @@ bool Player::CheckExits() {
 
 	for (auto& exit : this->rightExits) {
 		if (this->Collide(this->playerCoordinates.x, exit.x, this->playerCoordinates.y, exit.y, this->width, this->tileSize, this->height, this->tileSize)) {
-			this->mapIncX = 1;
-			this->mapIndexX += this->mapIncX;
+			*this->mapIncX = 1;
+			*this->mapIndexX += *this->mapIncX;
 			this->playerCoordinates = this->playerBeginningCoordinates;
 			return true;
 
@@ -462,8 +462,8 @@ bool Player::CheckExits() {
 
 	for (auto& exit : this->topExits) {
 		if (this->Collide(this->playerCoordinates.x, exit.x, this->playerCoordinates.y, exit.y, this->width, this->tileSize, this->height, this->tileSize)) {
-			this->mapIncY = -1;
-			this->mapIndexY += this->mapIncY;
+			*this->mapIncY = -1;
+			*this->mapIndexY += *this->mapIncY;
 			this->playerCoordinates = this->playerBeginningCoordinates;
 			this->vectorY -= (this->jumpSpeed / 2);
 			return true;
@@ -473,8 +473,8 @@ bool Player::CheckExits() {
 
 	for (auto& exit : this->bottomExits) {
 		if (this->Collide(this->playerCoordinates.x, exit.x, this->playerCoordinates.y, exit.y, this->width, this->tileSize, this->height, this->tileSize)) {
-			this->mapIncY = 1;
-			this->mapIndexY += this->mapIncY;
+			*this->mapIncY = 1;
+			*this->mapIndexY += *this->mapIncY;
 			this->playerCoordinates = this->playerBeginningCoordinates;
 			return true;
 		}
@@ -484,40 +484,7 @@ bool Player::CheckExits() {
 
 }
 
-void Player::ParseJSON() {
-	this->dataFile = std::ifstream("GameData.json");
 
-	jsonReader.parse(this->dataFile, this->jsonData);
-	
-	/*
-	Json::Value event;
-	Json::Value vec(Json::arrayValue);
-	vec.append(Json::Value(1));
-	vec.append(Json::Value(2));
-	vec.append(Json::Value(3));
-
-	event["competitors"]["home"]["name"] = "Liverpool";
-	event["competitors"]["away"]["code"] = 89223;
-	event["competitors"]["away"]["name"] = "Aston Villa";
-	event["competitors"]["away"]["code"] = vec;
-
-	std::ofstream file_id;
-	file_id.open("GameData.json");
-
-	
-
-	Json::StyledWriter styledWriter;
-	file_id << styledWriter.write(event);
-
-	file_id.close();
-
-	std::cout << event << std::endl;
-	
-	*/
-
-	
-	
-}
 
 void Player::Death() {
 	this->playerCoordinates.x = this->playerBeginningCoordinates.x;

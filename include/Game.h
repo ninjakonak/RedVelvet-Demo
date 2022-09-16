@@ -1,12 +1,15 @@
 #pragma once
-#ifndef GAME2_H
-#define GAME2_H
+#ifndef GAME_H
+#define GAME_H
 #include<iostream>
 #include<vector>
 #include<ctime>
 #include"Player.h"
 #include<string>
 #include<thread>
+#include<json/json.h>
+#include"constants.h"
+#include"Level.h"
 
 #include<SFML/Graphics.hpp>
 #include<SFML/System.hpp>
@@ -21,15 +24,15 @@ public:
 	virtual ~Game();
 	const bool Running() const;
 	void Update();
-	void Render();
 private:
 	void InitVariables();
 	void InitWindow();
-	void InitSprites();
-	void InitTextures();
+	
 
 	sf::VideoMode videoMode;
 	sf::RenderWindow* window;
+
+	Level level;
 
 	sf::Event ev;
 
@@ -38,7 +41,6 @@ private:
 
 	std::vector<sf::Sprite> hitboxSprites;
 	std::vector<sf::Sprite> backgroundSprites;
-	std::vector<sf::Sprite> spikes;
 
 	sf::Vector2f leftExit;
 	sf::Vector2f rightExit;
@@ -52,7 +54,7 @@ private:
 
 	int screen_height = 960;
 	int screen_width = 960;
-	int tileSize = 20;
+	int tileSize;
 
 	int numberOfMapsX = 3;
 	int	numberOfMapsY = 3;
@@ -72,15 +74,13 @@ private:
 
 
 	
-	void InitMap();
+	
 	void PollEvents();
-	void RenderTiles();
 	void ClearScreen();
 	void DisplayScreen();
-	void MoveCamera();
 
 	Player player;
-	void CreatePlayer();
+	void SetPlayerWindow();
 
 	sf::Texture dirtTexture;
 	sf::Texture grassTexture;
@@ -112,7 +112,6 @@ private:
 	sf::Sprite tree;
 	sf::Sprite spike;
 
-	void ParseJSON();
 
 	std::ifstream dataFile;
 	Json::Value jsonData;

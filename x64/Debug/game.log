@@ -1,2 +1,12 @@
-﻿  jsoncpp.cpp
+﻿  Game.cpp
+  The contents of <format> are available only in c++latest mode with concepts support;
+  see https://github.com/microsoft/STL/issues/1814 for details.
+C:\Users\ninja\RedVelvet-Demo\include\Player.h(129,39): warning C4244: 'başlatılıyor': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\include\Player.h(130,41): warning C4244: 'başlatılıyor': 'int' - 'float' dönüşümü; veri kaybı olabilir
+  main.cpp
+  The contents of <format> are available only in c++latest mode with concepts support;
+  see https://github.com/microsoft/STL/issues/1814 for details.
+C:\Users\ninja\RedVelvet-Demo\include\Player.h(129,39): warning C4244: 'başlatılıyor': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\include\Player.h(130,41): warning C4244: 'başlatılıyor': 'int' - 'float' dönüşümü; veri kaybı olabilir
+  Kod Üretiliyor...
   game.vcxproj -> C:\Users\ninja\RedVelvet-Demo\x64\Debug\game.exe
