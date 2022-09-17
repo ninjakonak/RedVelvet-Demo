@@ -1,4 +1,6 @@
 #include"include/Game.h"
+#include<SFML/Window.hpp>
+#include<SFML/Graphics.hpp>
 
 
 
@@ -14,6 +16,10 @@ int main() {
 	while (game.Running()) {
 		game.Update();
 	}
+	
+
+	
+
 	
 
 	return 0;

@@ -27,8 +27,9 @@ void Game::SetPlayerWindow() {
 
 Game::Game() {
 	this->InitVariables();
+	this->level.InitLevel(&this->player);
 	this->InitWindow();
-	this->level.InitiatePlayer(this->window, &this->player);
+	this->level.InitWindow(this->window);
 	this->SetPlayerWindow();
 }
 

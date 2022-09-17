@@ -6,12 +6,15 @@ Level::Level() {
 	
 }
 
-void Level::InitiatePlayer(sf::RenderWindow* window, Player* playerObj) {
-	this->window = window;
+void Level::InitLevel(Player* playerObj) {
 	this->player = playerObj;
 
 	this->InitVariables();
 	this->InitMap();
+}
+
+void Level::InitWindow(sf::RenderWindow* window) {
+	this->window = window;
 }
 
 Level::~Level() {

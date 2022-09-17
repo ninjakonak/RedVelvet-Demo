@@ -1,12 +1,83 @@
-﻿  Game.cpp
+﻿  main.cpp
   The contents of <format> are available only in c++latest mode with concepts support;
   see https://github.com/microsoft/STL/issues/1814 for details.
 C:\Users\ninja\RedVelvet-Demo\include\Player.h(129,39): warning C4244: 'başlatılıyor': 'int' - 'float' dönüşümü; veri kaybı olabilir
 C:\Users\ninja\RedVelvet-Demo\include\Player.h(130,41): warning C4244: 'başlatılıyor': 'int' - 'float' dönüşümü; veri kaybı olabilir
-  main.cpp
+  Game.cpp
   The contents of <format> are available only in c++latest mode with concepts support;
   see https://github.com/microsoft/STL/issues/1814 for details.
 C:\Users\ninja\RedVelvet-Demo\include\Player.h(129,39): warning C4244: 'başlatılıyor': 'int' - 'float' dönüşümü; veri kaybı olabilir
 C:\Users\ninja\RedVelvet-Demo\include\Player.h(130,41): warning C4244: 'başlatılıyor': 'int' - 'float' dönüşümü; veri kaybı olabilir
+  Level.cpp
+  The contents of <format> are available only in c++latest mode with concepts support;
+  see https://github.com/microsoft/STL/issues/1814 for details.
+C:\Users\ninja\RedVelvet-Demo\include\Player.h(129,39): warning C4244: 'başlatılıyor': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\include\Player.h(130,41): warning C4244: 'başlatılıyor': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(125,104): warning C4244: 'bağımsız değişken': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(125,60): warning C4244: 'bağımsız değişken': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(134,111): warning C4244: 'bağımsız değişken': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(134,67): warning C4244: 'bağımsız değişken': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(144,13): warning C4244: 'başlatılıyor': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(145,13): warning C4244: 'başlatılıyor': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(152,49): warning C4244: '=': 'int' - 'T' dönüşümü; veri kaybı olabilir
+          with
+          [
+              T=float
+          ]
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(153,49): warning C4244: '=': 'int' - 'T' dönüşümü; veri kaybı olabilir
+          with
+          [
+              T=float
+          ]
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(156,13): warning C4244: 'başlatılıyor': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(157,13): warning C4244: 'başlatılıyor': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(165,50): warning C4244: '=': 'int' - 'T' dönüşümü; veri kaybı olabilir
+          with
+          [
+              T=float
+          ]
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(166,50): warning C4244: '=': 'int' - 'T' dönüşümü; veri kaybı olabilir
+          with
+          [
+              T=float
+          ]
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(169,13): warning C4244: 'başlatılıyor': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(170,13): warning C4244: 'başlatılıyor': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(178,48): warning C4244: '=': 'int' - 'T' dönüşümü; veri kaybı olabilir
+          with
+          [
+              T=float
+          ]
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(179,48): warning C4244: '=': 'int' - 'T' dönüşümü; veri kaybı olabilir
+          with
+          [
+              T=float
+          ]
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(182,13): warning C4244: 'başlatılıyor': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(183,13): warning C4244: 'başlatılıyor': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(192,51): warning C4244: '=': 'int' - 'T' dönüşümü; veri kaybı olabilir
+          with
+          [
+              T=float
+          ]
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(193,51): warning C4244: '=': 'int' - 'T' dönüşümü; veri kaybı olabilir
+          with
+          [
+              T=float
+          ]
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(196,13): warning C4244: 'başlatılıyor': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(197,13): warning C4244: 'başlatılıyor': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(205,115): warning C4244: 'bağımsız değişken': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(205,71): warning C4244: 'bağımsız değişken': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(213,116): warning C4244: 'bağımsız değişken': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(213,72): warning C4244: 'bağımsız değişken': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(219,97): warning C4244: 'bağımsız değişken': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(219,53): warning C4244: 'bağımsız değişken': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(225,98): warning C4244: 'bağımsız değişken': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(225,54): warning C4244: 'bağımsız değişken': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(231,103): warning C4244: 'bağımsız değişken': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(231,59): warning C4244: 'bağımsız değişken': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(237,103): warning C4244: 'bağımsız değişken': 'int' - 'float' dönüşümü; veri kaybı olabilir
+C:\Users\ninja\RedVelvet-Demo\src\Level.cpp(237,59): warning C4244: 'bağımsız değişken': 'int' - 'float' dönüşümü; veri kaybı olabilir
   Kod Üretiliyor...
   game.vcxproj -> C:\Users\ninja\RedVelvet-Demo\x64\Debug\game.exe

@@ -19,7 +19,9 @@ public:
 	
 	Level();
 
-	void InitiatePlayer(sf::RenderWindow* window, Player* playerObj);
+	void InitLevel(Player* playerObj);
+
+	void InitWindow(sf::RenderWindow* window);
 
 	virtual ~Level();
 	void Render();
